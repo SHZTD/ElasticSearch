@@ -2,6 +2,11 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        VerLogs vl = new VerLogs();
+        vl.hacerQuery(
+                "FROM logs_server " +
+                        "| KEEP ip, timestamp, url " +
+                        "| LIMIT 5"
+        );
     }
 }
